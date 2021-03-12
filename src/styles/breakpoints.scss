@@ -1,0 +1,13 @@
+//Responsive breakpoints
+$fullhd: 1480px;
+$widescreen: 1216px;
+$desktop: 1024px;
+$tablet: 992px;
+$mobile: 480px;
+@media screen and (min-width: $fullhd){}
+@media screen and (min-width: $widescreen) and (max-width:$fullhd - 1px){}
+@media screen and (min-width: $desktop) and (max-width:$widescreen - 1px){}
+@media screen and (min-width: $tablet) and (max-width:$desktop - 1px){}
+@media screen and (min-width: $mobile) and (max-width:$tablet - 1px){}
+@media screen and (max-width:$mobile - 1px){}
+@media screen and (max-width:$tablet - 1px){}

@@ -1,0 +1,511 @@
+@import "./breakpoints.scss";
+@import "./theme.scss";
+@import "./util.scss";
+
+html {
+}
+
+html,
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: $text-dark;
+  font-family: "Rubik", sans-serif;
+  font-size: 15px;
+  height: 100vh;
+  scroll-behavior: smooth;
+}
+
+#root {
+  height: 100%;
+}
+
+.App {
+  height: 100%;
+  > div {
+    @media screen and (max-width: $tablet - 1px) {
+      height: auto !important;
+    }
+  }
+}
+
+.rs-row {
+  margin-left: 0;
+  margin-right: 0;
+  .rs-col-md-offset-6 {
+    @media screen and (min-width: $tablet) and (max-width: $widescreen - 1px) {
+      margin-left: 15%;
+      width: 70%;
+    }
+  }
+  .card {
+    @media screen and (min-width: $desktop) and (max-width: $widescreen - 1px) {
+      padding: 0.75rem;
+    }
+    @media screen and (min-width: $tablet) and (max-width: $desktop - 1px) {
+      padding: 0.35rem;
+    }
+    @media screen and (max-width: $tablet - 1px) {
+      margin-top: 40px !important;
+      margin-bottom: 40px;
+    }
+    @media screen and (max-width: $mobile - 1px) {
+      padding: 0.75rem;
+    }
+
+    &.--margin-zero {
+      @media screen and (max-width: $tablet - 1px) {
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+      }
+    }
+
+    .rs-col-md-6 {
+      @media screen and (max-width: $tablet - 1px) {
+        margin-top: 0 !important;
+      }
+      h5 {
+        @media screen and (min-width: $mobile) and (max-width: $tablet - 1px) {
+          font-size: 22px !important;
+        }
+        @media screen and (max-width: $mobile - 1px) {
+          margin-top: 20px !important;
+        }
+      }
+      hr {
+        @media screen and (max-width: $mobile - 1px) {
+          margin-bottom: 10px;
+        }
+      }
+      p {
+        @media screen and (min-width: $mobile) and (max-width: $tablet - 1px) {
+          font-size: 15px !important;
+        }
+      }
+    }
+    .rs-col-md-18 {
+      @media screen and (max-width: $tablet - 1px) {
+        margin-top: 2rem;
+        padding-top: 2rem;
+        border-top: 1px solid rgb(227, 229, 235);
+        border-left: 0 !important;
+      }
+      .rs-col-xs-8 {
+        &:last-child {
+          @media screen and (max-width: $tablet - 1px) {
+            width: 100%;
+            margin-left: 0;
+          }
+        }
+      }
+      .mb-30 {
+        @media screen and (max-width: $tablet - 1px) {
+          margin-bottom: 0 !important;
+        }
+      }
+      .step-1 {
+        .rs-col-xs-8 {
+          @media screen and (max-width: $tablet - 1px) {
+            width: 60%;
+            margin-left: 20%;
+            margin-bottom: 2rem;
+          }
+        }
+        .rs-col-xs-12 {
+          @media screen and (max-width: $tablet - 1px) {
+            width: 94%;
+            margin-left: 3%;
+          }
+        }
+      }
+      .step-2,
+      .step-3,
+      .step-4,
+      .step-5,
+      .step-6,
+      .step-7,
+      .step-8 {
+        @media screen and (min-width: $desktop) and (max-width: $widescreen - 1px) {
+          padding: 0.5rem 0;
+        }
+        @media screen and (min-width: $tablet) and (max-width: $desktop - 1px) {
+          padding: 0.7rem 0;
+        }
+        .rs-col-xs-16 {
+          @media screen and (max-width: $tablet - 1px) {
+            width: 94%;
+            margin-left: 3%;
+          }
+        }
+        .rs-col-xs-20 {
+          @media screen and (max-width: $tablet - 1px) {
+            width: 100%;
+            margin-left: 0;
+          }
+        }
+      }
+      .step-3 {
+        .standard-question {
+          @media screen and (max-width: $tablet - 1px) {
+            margin-bottom: 0.7rem;
+          }
+        }
+        .centered {
+          .OptionCard {
+            margin-top: 0;
+            margin-bottom: 15px;
+          }
+        }
+      }
+      form {
+        @media screen and (max-width: $tablet - 1px) {
+          margin-top: 1.5rem;
+        }
+      }
+    }
+  }
+}
+
+.more-info-wrap {
+  @media screen and (min-width: $tablet) and (max-width: $desktop - 1px) {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.more-info-card-style {
+  @media screen and (max-width: $tablet - 1px) {
+    display: flex;
+    // flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  @media screen and (max-width: $mobile - 1px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.btn.--text.--danger {
+  @media screen and (max-width: $tablet - 1px) {
+    float: left;
+    background: #df542a;
+    color: white;
+    font-size: 1rem;
+    padding: 8px 15px;
+    width: auto;
+  }
+}
+
+.mr-20 {
+  @media screen and (max-width: $tablet - 1px) {
+    width: 100%;
+    margin-right: 0 !important;
+  }
+}
+
+.page-title {
+  line-height: 1.5;
+}
+
+.rs-modal-sm {
+  @media screen and (max-width: $tablet - 1px) {
+    width: 90%;
+    .mb-20 {
+      @media screen and (max-width: $mobile - 1px) {
+        font-size: 12px;
+      }
+    }
+    .rs-modal-title {
+      @media screen and (max-width: $mobile - 1px) {
+        font-size: 1rem !important;
+        width: 100%;
+        display: initial;
+      }
+    }
+  }
+}
+.rs-modal-lg {
+  @media screen and (max-width: $tablet - 1px) {
+    width: 90%;
+  }
+  .rs-modal-body {
+    @media screen and (max-width: $mobile - 1px) {
+      margin-top: 0;
+    }
+  }
+}
+
+.card.mb-30 {
+  .rs-col-xs-20 {
+    @media screen and (max-width: $tablet - 1px) {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .OptionCard {
+      margin-bottom: 1.8rem;
+    }
+  }
+}
+
+.rs-form-vertical {
+  .card {
+    @media screen and (min-width: $tablet) and (max-width: $widescreen - 1px) {
+      padding: 1.5rem;
+    }
+    @media screen and (max-width: $mobile - 1px) {
+      padding: 1rem;
+    }
+    .rs-col-xs-20 {
+      @media screen and (max-width: $tablet - 1px) {
+        width: 100%;
+        margin-left: 0;
+        padding-left: 0;
+        padding-right: 0;
+        margin-bottom: 0.6rem;
+      }
+    }
+
+    .rs-form-group {
+      @media screen and (max-width: $tablet - 1px) {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+      }
+    }
+    .OptionCard {
+      @media screen and (min-width: $mobile) and (max-width: $tablet - 1px) {
+        width: 48%;
+        margin: 1% 1%;
+      }
+      @media screen and (max-width: $mobile - 1px) {
+        width: 70%;
+        margin: 1.5rem auto;
+      }
+    }
+    .rs-form-control-wrapper > .rs-input {
+      @media screen and (max-width: $widescreen - 1px) {
+        max-width: 100%;
+      }
+    }
+
+    .rs-control-label {
+      @media screen and (min-width: $tablet) and (max-width: $widescreen - 1px) {
+        font-size: 11px;
+        letter-spacing: 0;
+      }
+      @media screen and (max-width: $mobile - 1px) {
+        font-size: 11px;
+      }
+    }
+  }
+}
+
+.rs-tag-group {
+  @media screen and (max-width: $tablet - 1px) {
+    margin: 0;
+  }
+  .OptionTag {
+    &.rs-tag-violet {
+      @media screen and (max-width: $tablet - 1px) {
+        width: 100%;
+        margin: 5px 0;
+      }
+    }
+  }
+}
+
+.rs-btn-toolbar {
+  .rs-btn {
+    @media screen and (max-width: $tablet - 1px) {
+      width: 100% !important;
+      margin-bottom: 0.75rem;
+      margin-left: 0 !important;
+    }
+  }
+}
+
+.rs-form-group {
+  .rs-tag-group {
+    .rs-tag-blue {
+      @media screen and (max-width: $tablet - 1px) {
+        margin-left: 0;
+        margin-right: 0.75rem;
+      }
+    }
+  }
+}
+
+.rs-container-has-sidebar {
+  .rs-sidebar {
+    @media screen and (max-width: $tablet - 1px) {
+      width: 15%;
+    }
+  }
+  .rs-container {
+    @media screen and (max-width: $tablet - 1px) {
+      width: 85%;
+    }
+    .rs-col-xs-20 {
+      @media screen and (max-width: $tablet - 1px) {
+        width: 100%;
+        margin-left: 0;
+      }
+    }
+  }
+}
+
+.rs-container {
+  background-color: $bg-light;
+  min-height: 100%;
+}
+
+.App-Private {
+  .rs-sidenav {
+    background-color: #fff;
+    border-right: 1px solid $border-light;
+    height: 100%;
+
+    .rs-sidenav-body {
+      position: sticky;
+      top: 80px;
+    }
+
+    a.is-active {
+      border-left: 3px solid $purple;
+      background: #f0f2ff;
+    }
+
+    .log-out {
+      background: #6565da;
+      bottom: 0;
+      color: #fff;
+      position: fixed;
+    }
+  }
+
+  .rs-header {
+    background: #fff;
+    border-bottom: 1px solid $border-light;
+    padding: 30px;
+
+    .logo {
+      width: 125px;
+    }
+  }
+
+  .rs-content {
+    padding: 30px;
+  }
+}
+
+// Demo badge
+.demo-badge {
+  font-size: 14px;
+  transform: translate(6px, 2px);
+  display: inline-block;
+  background: #6565da;
+  color: #fff;
+  padding: 1px 10px;
+  border-radius: 30px;
+}
+
+.page-action-btn {
+  @media screen and (min-width: $widescreen) and (max-width: $fullhd - 1px) {
+    padding: 0 10px;
+    width: auto;
+  }
+  @media screen and (min-width: $desktop) and (max-width: $widescreen - 1px) {
+    padding: 0 7px;
+    width: auto;
+    font-size: 12px;
+  }
+  @media screen and (min-width: $tablet) and (max-width: $desktop - 1px) {
+    padding: 0 27px;
+    width: auto;
+    margin-bottom: 0.75rem;
+  }
+  @media screen and (max-width: $mobile - 1px) {
+    font-size: 16px;
+    padding: 0 20px;
+    margin-bottom: 0.75rem;
+    width: 100%;
+  }
+}
+
+.rs-nav.rs-nav-horizontal.rs-nav-tabs {
+  ul {
+    li {
+      @media screen and (max-width: $tablet - 1px) {
+        display: block;
+        border-radius: 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        a {
+          border-radius: 0 !important;
+          border: none !important;
+        }
+      }
+    }
+  }
+}
+
+.pink-link {
+  @media screen and (max-width: $tablet - 1px) {
+    width: 100%;
+    display: block;
+  }
+  @media screen and (max-width: $mobile - 1px) {
+    font-size: 12px !important;
+    &:first-child {
+      margin-top: 1rem;
+    }
+  }
+}
+
+.performance-metric {
+  @media screen and (max-width: $tablet - 1px) {
+    border-right: 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+}
+
+.rs-progress-circle {
+  @media screen and (max-width: $tablet - 1px) {
+    width: 60% !important;
+  }
+}
+
+.card-subtitle-large {
+  @media screen and (max-width: $mobile - 1px) {
+    font-size: 1.2rem !important;
+  }
+}
+.score-breakdown-general {
+  @media screen and (max-width: $mobile - 1px) {
+    padding: 1rem;
+  }
+}
+
+.rs-drawer-right.rs-drawer-lg {
+  @media screen and (max-width: $tablet - 1px) {
+    width: 95%;
+    right: 0;
+  }
+}
+
+.recharts-responsive-container {
+  @media screen and (max-width: $mobile - 1px) {
+    height: 300px !important;
+  }
+}
+.recharts-wrapper {
+  @media screen and (max-width: $mobile - 1px) {
+    height: 300px !important;
+    .recharts-surface {
+      height: 100%;
+    }
+  }
+}

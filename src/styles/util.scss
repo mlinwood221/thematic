@@ -1,0 +1,91 @@
+@import './theme.scss';
+
+// Display
+.d-block {
+    display: block;
+}
+
+// Text
+.text-center {
+    text-align: center !important;
+}
+
+.text-dark {
+    color: $text-dark !important;
+}
+
+.fw-500 {
+    font-weight: 500 !important;
+}
+
+// Padding
+.pt-10 {
+    padding-top: 10px !important;
+}
+
+.pb-20 {
+    padding-bottom: 20px !important;
+}
+
+// Margin
+.mt-10 {
+    margin-top: 10px !important;
+}
+
+.mt-25 {
+    margin-top: 25px !important;
+}
+
+.mt-50 {
+    margin-top: 50px !important;
+}
+
+.mr-10 {
+    margin-right: 10px !important;
+}
+
+.mr-20 {
+    margin-right: 20px !important;
+}
+
+.mb-10 {
+    margin-bottom: 10px !important;
+}
+
+.mb-20 {
+    margin-bottom: 20px !important;
+}
+
+.mb-30 {
+    margin-bottom: 30px !important;
+}
+
+.mb-50 {
+    margin-bottom: 50px !important;
+}
+
+.ml-10 {
+    margin-left: 10px !important;
+}
+
+// Border
+.brdt-1 {
+    border-top: 1px solid #eee;
+}
+
+.brdr-1 {
+    border-right: 1px solid #eee;
+}
+
+.brdt-2-light {
+    border-top: 2px solid #f4f4f4;
+}
+
+.brdr-2-light {
+    border-right: 2px solid #f4f4f4;
+}
+
+// Float
+.float-right {
+    float: right !important;
+}
