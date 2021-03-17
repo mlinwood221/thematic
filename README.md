@@ -4,9 +4,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
-### `yarn start`
+### `REACT_APP_ENVIRONMENT=development yarn start`
+or
+### `REACT_APP_ENVIRONMENT=local yarn start`
 
-Runs the app in the development mode.<br />
+Runs the app in the development mode. Environment variable specifies which API endpoint frontend will hit. Make sure you run backend locally if you decide to set the env variable to 'local' <br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.<br />

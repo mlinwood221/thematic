@@ -35,8 +35,11 @@ class Questionnaire extends Component {
     }
 
     getQuestionnaireBaseUrl = () => {
-        if(process.env.REACT_APP_ENVIRONMENT ==='development'){
+        if(process.env.REACT_APP_ENVIRONMENT ==='local'){
             return "http://localhost:3000"
+        }
+        if(process.env.REACT_APP_ENVIRONMENT ==='development'){
+            return "https://tender-swanson-000efa.netlify.app"
         }
         if(process.env.REACT_APP_ENVIRONMENT==='production'){
             return "https://app.usethematic.com"

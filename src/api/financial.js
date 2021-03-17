@@ -1,6 +1,7 @@
 import axios from 'axios';
 
 const IEX_ROOT_ENV = {
+    'local':'https://sandbox.iexapis.com/stable',
     'development': 'https://sandbox.iexapis.com/stable',
     'production': 'https://cloud.iexapis.com/v1'
 };

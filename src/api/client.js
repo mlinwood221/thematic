@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const API_ROOT_ENV = {
-    // 'development': 'http://localhost:8080/v1',
+    'local': 'http://localhost:8080/v1',
     'development':'http://thematicapi-env.eba-agr4ihb7.us-west-2.elasticbeanstalk.com/v1',
     // 'development': 'http://thematic-api-dev.us-east-2.elasticbeanstalk.com/v1',
     'production': 'https://core.usethematic.com/v1'
