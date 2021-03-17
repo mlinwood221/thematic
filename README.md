@@ -1,5 +1,3 @@
-# Note: We need to set up development and production environments on AWS. Until then, local backend server and db has to be run in order to use this project.
-
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
