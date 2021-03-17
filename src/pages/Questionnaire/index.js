@@ -35,10 +35,10 @@ class Questionnaire extends Component {
     }
 
     getQuestionnaireBaseUrl = () => {
-        if(process.env.NODE_ENV ==='development'){
+        if(process.env.REACT_APP_ENVIRONMENT ==='development'){
             return "http://localhost:3000"
         }
-        if(process.env.NODE_ENV==='production'){
+        if(process.env.REACT_APP_ENVIRONMENT==='production'){
             return "https://app.usethematic.com"
         }
     }

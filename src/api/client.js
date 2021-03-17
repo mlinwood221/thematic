@@ -7,7 +7,8 @@ const API_ROOT_ENV = {
     'production': 'https://core.usethematic.com/v1'
 };
 
-const API_BASE = API_ROOT_ENV[process.env.NODE_ENV];
+// const API_BASE = API_ROOT_ENV[process.env.NODE_ENV];
+const API_BASE = API_ROOT_ENV[process.env.REACT_APP_ENVIRONMENT]; 
 
 var aInstance;
 

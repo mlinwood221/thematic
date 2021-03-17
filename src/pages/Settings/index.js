@@ -13,7 +13,7 @@ const STRIPE_KEY_ENV = {
     'production': 'pk_live_fhtrf9tH0B33TxabqoDI5l1K00orfFPlch'
 };
 
-const stripePromise = loadStripe(STRIPE_KEY_ENV[process.env.NODE_ENV]);
+const stripePromise = loadStripe(STRIPE_KEY_ENV[process.env.REACT_APP_ENVIRONMENT]);
 
 const newClientInfo = () => {
     return {
