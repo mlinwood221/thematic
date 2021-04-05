@@ -55,6 +55,7 @@ class DetailForm extends Component {
         activitiesToAvoid: activities(),
         ideasToSupport: themes(),
         sectors: SECTORS,
+        etfUniverse: [],
         aclasses: ACLASSES,
         restrictedSecurities: [],
         etfPool: [],
@@ -75,6 +76,8 @@ class DetailForm extends Component {
     personalInfoForm = React.createRef();
 
     componentDidMount() {
+        this.fetchETFs();
+
         if (this.props.mode === 'edit') {
             this.setState({
                 originalClient: JSON.parse(JSON.stringify(this.state.clientInfo))
@@ -84,6 +87,31 @@ class DetailForm extends Component {
             this.unselectItems();
         }
     }
+
+    fetchETFs = async () => {
+        const listETFRequest = {};
+        try {
+          let res = await ClientAPI.listETFs(listETFRequest);
+
+          var etfs = [];
+
+          for(let i=0; i<res.data.etfs.length; i++){
+              etfs.push({
+                  "label": res.data.etfs[i].name,
+                  "symbol": res.data.etfs[i].ticker
+              })
+          }
+
+          this.setState({ etfUniverse: etfs });
+        } catch (error) {
+          console.log("error", error);
+          this.setState({
+            etfUniverse: [],
+          });
+        } finally {
+          return;
+        }
+      };
 
     unselectItems = () => {
         let activitiesToAvoid = this.state.activitiesToAvoid;
@@ -293,7 +321,7 @@ class DetailForm extends Component {
                     .onSuccess(res.data.id);
             } catch (error) {
                 console.log("error")
-                alert("There hes been an error...")
+                alert("There has been an error...")
             } finally {
                 this.setState({ isLoading: false });
                 return;
@@ -314,7 +342,7 @@ class DetailForm extends Component {
                 .onSuccess(updateRequest.id);
         } catch (error) {
             console.log("error")
-            alert("There hes been an error updating client...")
+            alert("There has been an error updating client...")
         } finally {
             this.setState({ isLoading: false });
             return;
@@ -677,7 +705,7 @@ class DetailForm extends Component {
                                         style={{
                                             width: '100%'
                                         }}
-                                        data={ETFS}
+                                        data={this.state.etfUniverse}
                                         placement="topStart"
                                         onSelect={(value, item) => this.handleToggleETFPool(item.symbol, true)} /> {/*  */}
 

@@ -35,11 +35,11 @@ class Questionnaire extends Component {
     }
 
     getQuestionnaireBaseUrl = () => {
+        if(process.env.REACT_APP_ENVIRONMENT ==='development'){
+            return "http://dev.usethematic.com"
+        }
         if(process.env.REACT_APP_ENVIRONMENT ==='local'){
             return "http://localhost:3000"
-        }
-        if(process.env.REACT_APP_ENVIRONMENT ==='development'){
-            return "https://tender-swanson-000efa.netlify.app"
         }
         if(process.env.REACT_APP_ENVIRONMENT==='production'){
             return "https://app.usethematic.com"
@@ -548,7 +548,7 @@ class Questionnaire extends Component {
                                     <p style={{
                                         textAlign: "center",
                                         fontWeight: "500"
-                                    }}>{this.state.adviser ? this.state.adviser.name : "Your Adviser Name"}</p>
+                                    }}>{this.state.adviser ? this.state.adviser.advisor_name : "Your Adviser Name"}</p>
                                     <p style={{
                                         textAlign: "center",
                                         fontSize: "13px"
@@ -556,7 +556,7 @@ class Questionnaire extends Component {
                                     <p style={{
                                         textAlign: "center",
                                         fontSize: "13px"
-                                    }}>{this.state.adviser ? this.state.adviser.phone : "Your Adviser Phone"}</p>
+                                    }}>{this.state.adviser ? this.state.adviser.advisor_phone : "Your Adviser Phone"}</p>
                                 </Col>
                                 <Col style={{
                                     borderLeft: "1px solid #e3e5eb",

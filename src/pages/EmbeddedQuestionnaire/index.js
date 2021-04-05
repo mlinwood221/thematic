@@ -128,7 +128,11 @@ class EmbeddedQuestionnaire extends Component {
             this.setState({ isLoading: false });
             alert("Thank you. Advisor will be in touch soon.")
             if (this.state.adviser.website) {
-                window.open(this.state.adviser.website, "_self")
+                var web = this.state.adviser.website
+                if(!web.startsWith("http")){
+                    web = "http://"+web
+                }
+                window.open(web, "_self")
             } else {
                 window.opener = null;
                 window.open("", "_self");
@@ -508,7 +512,7 @@ class EmbeddedQuestionnaire extends Component {
                                     <p style={{
                                         textAlign: "center",
                                         fontWeight: "500"
-                                    }}>{this.state.adviser ? this.state.adviser.name : "Your Adviser Name"}</p>
+                                    }}>{this.state.adviser ? this.state.adviser.advisor_name : "Your Adviser Name"}</p>
                                     <p style={{
                                         textAlign: "center",
                                         fontSize: "13px"
@@ -516,7 +520,7 @@ class EmbeddedQuestionnaire extends Component {
                                     <p style={{
                                         textAlign: "center",
                                         fontSize: "13px"
-                                    }}>{this.state.adviser ? this.state.adviser.phone : "Your Adviser Phone"}</p>
+                                    }}>{this.state.adviser ? this.state.adviser.advisor_phone : "Your Adviser Phone"}</p>
                                 </Col>
                                 <Col style={{
                                     borderLeft: "1px solid #e3e5eb",

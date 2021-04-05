@@ -10,12 +10,15 @@ const AppSidenav = () => {
     const handleLogout = () => {
         localStorage.removeItem('t__isAuthenticated');
         localStorage.removeItem('t__demo-user');
+        localStorage.removeItem('t__user-type');
         history.push('/login');
     }
 
     return (
         <Sidenav activeKey="1" expanded={false}>
-            <Sidenav.Body>
+            {
+                localStorage.getItem('t__user-type')==='ADVISOR' &&
+                <Sidenav.Body>
                 <Nav>
                     <NavLink eventKey="1" to="/clients" activeClassName="is-active">
                         <Icon icon="peoples" /> Clients
@@ -42,6 +45,20 @@ const AppSidenav = () => {
                     </Nav.Item>
                 </Nav>
             </Sidenav.Body>
+            }
+            {
+                localStorage.getItem('t__user-type')==='ADMIN' &&
+                <Sidenav.Body>
+                <Nav>
+                    <NavLink eventKey="1" to="/advisors" activeClassName="is-active">
+                        <Icon icon="peoples" /> Advisors
+                    </NavLink>
+                    <Nav.Item eventKey="5" onClick={handleLogout} className="log-out">
+                        <Icon icon="off" style={{ color: '#fff' }} />
+                    </Nav.Item>
+                </Nav>
+            </Sidenav.Body>
+            }
         </Sidenav>
     )
 };

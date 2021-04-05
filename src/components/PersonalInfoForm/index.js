@@ -22,7 +22,7 @@ class index extends Component {
     }
 
     render() {
-        const clientInfo = this.state.clientInfo;
+        let clientInfo = this.state.clientInfo;
 
         return (
             <div>

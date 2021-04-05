@@ -58,6 +58,7 @@ class DetailForm extends Component {
         aclasses: ACLASSES,
         restrictedSecurities: [],
         etfPool: [],
+        etfUniverse: [],
         sectorPool: [],
         originalClient: null,
         clientInfo: this.props.mode === 'create'
@@ -75,6 +76,8 @@ class DetailForm extends Component {
     personalInfoForm = React.createRef();
 
     componentDidMount() {
+        this.fetchETFs();
+
         if (this.props.mode === 'edit') {
             this.setState({
                 originalClient: JSON.parse(JSON.stringify(this.state.clientInfo))
@@ -84,6 +87,31 @@ class DetailForm extends Component {
             this.unselectItems();
         }
     }
+
+    fetchETFs = async () => {
+        const listETFRequest = {};
+        try {
+          let res = await ClientAPI.listETFs(listETFRequest);
+
+          var etfs = [];
+
+          for(let i=0; i<res.data.etfs.length; i++){
+              etfs.push({
+                  "label": res.data.etfs[i].name,
+                  "symbol": res.data.etfs[i].ticker
+              })
+          }
+
+          this.setState({ etfUniverse: etfs });
+        } catch (error) {
+          console.log("error", error);
+          this.setState({
+            etfUniverse: [],
+          });
+        } finally {
+          return;
+        }
+      };
 
     unselectItems = () => {
         let activitiesToAvoid = this.state.activitiesToAvoid;
@@ -311,7 +339,7 @@ class DetailForm extends Component {
                                         style={{
                                             width: '100%'
                                         }}
-                                        data={ETFS}
+                                        data={this.state.etfUniverse}
                                         placement="bottomStart"
                                         onSelect={(value, item) => this.handleToggleETFPool(item.symbol, true)} /> {/*  */}
 

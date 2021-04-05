@@ -9,6 +9,23 @@ class Login extends Component {
         password: ''
     }
 
+    componentDidMount = () => {
+        let uType = localStorage.getItem('t__user-type')
+
+        if(uType === "ADMIN"){
+            this
+                .props
+                .history
+                .push('/advisors');
+            return
+        } else if (uType === "ADVISOR") {
+            this
+                .props
+                .history
+                .push('/clients');
+            return
+        }
+    }
 
     handleLogin = async () => {
         if (!this.state.email || !this.state.password) {
@@ -24,10 +41,29 @@ class Login extends Component {
             console.log("Please enter valid credentials provided to you by Thematic.")
             alert("Invalid credentials")
         } finally {
-            this
-                .props
-                .history
-                .push('/clients');
+            try {
+                let res = await ClientAPI.current();
+                let type = res.data.user_type
+
+                localStorage.setItem('t__user-type', type)
+
+                if(type === "ADMIN"){
+                    this
+                        .props
+                        .history
+                        .push('/advisors');
+                    return
+                } else {
+                    this
+                        .props
+                        .history
+                        .push('/clients');
+                    return
+                }
+            } catch (error) {
+                console.log("error")
+                alert("There has been an error...")
+            }
         }
     };
 

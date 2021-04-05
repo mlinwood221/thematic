@@ -5,6 +5,9 @@ import 'rsuite/dist/styles/rsuite-default.css';
 import { PublicRoute, PrivateRoute } from './routeGuards';
 import Login from './pages/Login';
 import Clients from './pages/Clients';
+import Advisors from './pages/Advisors';
+import CreateAdvisor from './pages/Advisors/Create';
+import EditAdvisor from './pages/Advisors/Edit';
 import CreateClient from './pages/Clients/Create';
 import ClientDetail from './pages/Clients/Detail';
 import EditClient from './pages/Clients/Edit';
@@ -22,8 +25,8 @@ function App() {
     <div className="App"> 
       <HashRouter>
         <Switch>
-          <Route exact path="/">
-            <Redirect to="/clients" />
+          <Route exact path="/"> 
+            <Redirect to="/login" />
           </Route>
 
           <PublicRoute path="/login" component={Login} />
@@ -33,6 +36,10 @@ function App() {
           <PrivateRoute exact path="/clients/new" component={CreateClient} />
           <PrivateRoute exact path="/clients/detail/:id" component={ClientDetail} />
           <PrivateRoute exact path="/clients/edit/:id" component={EditClient} />
+
+          <PrivateRoute exact path="/advisors" component={Advisors} />
+          <PrivateRoute exact path="/advisors/new" component={CreateAdvisor} />
+          <PrivateRoute exact path="/advisors/edit/:id" component={EditAdvisor} /> 
 
           <PrivateRoute exact path="/questionnaire" component={Questionnaire} />
 
