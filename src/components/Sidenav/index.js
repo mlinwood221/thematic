@@ -53,6 +53,10 @@ const AppSidenav = () => {
                     <NavLink eventKey="1" to="/advisors" activeClassName="is-active">
                         <Icon icon="peoples" /> Advisors
                     </NavLink>
+
+                    <NavLink disabled={false} eventKey="4" to="/settings">
+                        <Icon icon="gear" /> Settings
+                    </NavLink>
                     <Nav.Item eventKey="5" onClick={handleLogout} className="log-out">
                         <Icon icon="off" style={{ color: '#fff' }} />
                     </Nav.Item>

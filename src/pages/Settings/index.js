@@ -220,7 +220,7 @@ class Settings extends Component {
                                         </FormGroup>
                                     </Col>
                                 </Row>
-                                <Row>
+                                {/* <Row>
                                     <hr></hr>
                                     <Col xs={20} xsOffset={2} md={8} mdOffset={0}>
                                     <FormGroup>
@@ -263,7 +263,7 @@ class Settings extends Component {
                                         </Button>
                                     }
                                     </Col>
-                                </Row>
+                                </Row> */}
                             </div>
                         </Form>
                     </div>
