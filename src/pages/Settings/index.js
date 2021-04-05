@@ -9,11 +9,12 @@ import { loadStripe } from '@stripe/stripe-js';
 import ConfirmationModal from './../../components/ConfirmationModal';
 
 const STRIPE_KEY_ENV = {
+    'local': 'pk_test_51Gqa8xBpTdIKBxjSDQvIrvvLFJWVJFtjlzi7BjVncZo6ABUuZ9i0OfDbD0kh42ZsSvefdEV09fiCylJ9585X1rIc00529sWAGs',
     'development': 'pk_test_51Gqa8xBpTdIKBxjSDQvIrvvLFJWVJFtjlzi7BjVncZo6ABUuZ9i0OfDbD0kh42ZsSvefdEV09fiCylJ9585X1rIc00529sWAGs',
     'production': 'pk_live_fhtrf9tH0B33TxabqoDI5l1K00orfFPlch'
 };
 
-const stripePromise = loadStripe(STRIPE_KEY_ENV[process.env.NODE_ENV]);
+const stripePromise = loadStripe(STRIPE_KEY_ENV[process.env.REACT_APP_ENVIRONMENT]);
 
 const newClientInfo = () => {
     return {
