@@ -1,14 +1,13 @@
 import axios from 'axios';
 
 const API_ROOT_ENV = {
-    'local': 'http://localhost:8080/v1',
-    'development':'https://devapi.thematic.com/v1',
+    'development': 'http://localhost:8080/v1',
+    // 'development':'http://thematicapi-env.eba-agr4ihb7.us-west-2.elasticbeanstalk.com/v1',
     // 'development': 'http://thematic-api-dev.us-east-2.elasticbeanstalk.com/v1',
-    'production': 'https://api.thematic.com/v1'
+    'production': 'https://core.usethematic.com/v1'
 };
 
-// const API_BASE = API_ROOT_ENV[process.env.NODE_ENV];
-const API_BASE = API_ROOT_ENV[process.env.REACT_APP_ENVIRONMENT]; 
+const API_BASE = API_ROOT_ENV[process.env.NODE_ENV];
 
 var aInstance;
 
@@ -26,6 +25,7 @@ const createAxiosInstance = () => {
             if(err.response.status === 401) {
                 localStorage.removeItem('t__isAuthenticated');
                 localStorage.removeItem('t__demo-user');
+                localStorage.removeItem('t__user-type');
                 alert("Unauthorized, please login again");
                 window.location="/";
             }
@@ -80,12 +80,32 @@ const remove = (data) => {
     return aInstance.post(API_BASE + '/clients/delete', data, getConfig());
 }
 
+const updateAdvisor = (data) => {
+    return aInstance.post(API_BASE + '/advisors/update', data, getConfig());
+}
+
+const createAdvisor = (data) => {
+    return aInstance.post(API_BASE + '/advisors/create', data, getConfig());
+}
+
+const listETFs = () => {
+    return aInstance.get(API_BASE + '/etfs/list', getConfig());
+}
+
+const listAdvisors = () => {
+    return aInstance.get(API_BASE + '/advisors/list', getConfig());
+}
+
 const list = (data) => {
     return aInstance.post(API_BASE + '/clients/list', data, getConfig());
 }
 
 const details = (data) => {
     return aInstance.post(API_BASE + '/clients/details', data, getConfig());
+}
+
+const advisorDetails = (data) => {
+    return aInstance.post(API_BASE + '/advisors/details', data, getConfig());
 }
 
 const fetchSuggestion = (data) => {
@@ -110,8 +130,13 @@ export default {
     current,
     embeddedCurrent,
     updatePassword,
+    listETFs,
     create,
     newProspect,
+    listAdvisors,
+    advisorDetails,
+    updateAdvisor,
+    createAdvisor,
     update,
     remove,
     list,

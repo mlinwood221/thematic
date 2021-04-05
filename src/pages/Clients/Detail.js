@@ -117,7 +117,6 @@ class Detail extends Component {
       risk_level: client.default_portfolio_params.risk_level,
     };
 
-    console.log("MAJKO DRAGA", client.activities_to_avoid);
     if (client.activities_to_avoid) {
       suggestionRequest.activities_to_avoid = client.activities_to_avoid;
     }
@@ -125,7 +124,6 @@ class Detail extends Component {
     try {
       this.setState({ isLoadingSuggestions: true });
       let res = await ClientAPI.fetchSuggestion(suggestionRequest);
-      console.log("STA KOJI KURAC VISE", res.data);
       this.setState({ suggestions: res.data });
     } catch (error) {
       console.log("error");

@@ -9,9 +9,9 @@ export const PublicRoute = ({
     component: Component,
     ...rest
 }) => {
-    if (localStorage.getItem('t__isAuthenticated')) {
-        return (<Redirect to="/clients"/>);
-    }
+    // if (localStorage.getItem('t__isAuthenticated')) {
+    //     return (<Redirect to="/clients"/>);
+    // }
 
     return (
         <Route

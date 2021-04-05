@@ -30,7 +30,7 @@ class Edit extends Component {
             this.setState({ client: res.data.client });
         } catch (error) {
             console.log("error", error)
-            alert("There hes been an error...")
+            alert("There has been an error...")
         } finally {
             this.setState({ isLoadingClient: false });
             return;
@@ -71,7 +71,7 @@ class Edit extends Component {
                 .push('/clients');
         } catch (error) {
             console.log("error", error);
-            alert("There hes been an error deleting the client...")
+            alert("There has been an error deleting the client...")
         }
     }
 

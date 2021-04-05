@@ -1,39 +1,39 @@
 export const ACTIVITIES = [
-    {
-        label: "Palm Oil",
-        value: "palm_oil",
-        icon: "iconsminds-palm-tree"
-    },
+    // {
+    //     label: "Palm Oil",
+    //     value: "palm_oil",
+    //     icon: "iconsminds-palm-tree"
+    // },
     {
         label: "Controversial Weapons",
         value: "weapons",
         icon: "iconsminds-target"
     },
-    {
-        label: "Gambling",
-        value: "gambling",
-        icon: "iconsminds-dice"
-    },
+    // {
+    //     label: "Gambling",
+    //     value: "gambling",
+    //     icon: "iconsminds-dice"
+    // },
     {
         label: "Nuclear Power",
         value: "nuclear",
         icon: "iconsminds-bio-hazard"
     },
-    {
-        label: "Fur and Leather",
-        value: "fur_leather",
-        icon: "iconsminds-deer"
-    },
-    {
-        label: "Alcohol",
-        value: "alcohol",
-        icon: "iconsminds-beer-glass"
-    },
-    {
-        label: "GMO",
-        value: "gmo",
-        icon: "iconsminds-chemical"
-    },
+    // {
+    //     label: "Fur and Leather",
+    //     value: "fur_leather",
+    //     icon: "iconsminds-deer"
+    // },
+    // {
+    //     label: "Alcohol",
+    //     value: "alcohol",
+    //     icon: "iconsminds-beer-glass"
+    // },
+    // {
+    //     label: "GMO",
+    //     value: "gmo",
+    //     icon: "iconsminds-chemical"
+    // },
     {
         label: "Animal Testing",
         value: "animal_testing",
@@ -49,16 +49,16 @@ export const ACTIVITIES = [
         value: "coal",
         icon: "iconsminds-factory"
     },
-    {
-        label: "Pesticides",
-        value: "pesticides",
-        icon: "iconsminds-security-bug"
-    },
-    {
-        label: "Adult Entertainment",
-        value: "adult",
-        icon: "iconsminds-heels-2"
-    },
+    // {
+    //     label: "Pesticides",
+    //     value: "pesticides",
+    //     icon: "iconsminds-security-bug"
+    // },
+    // {
+    //     label: "Adult Entertainment",
+    //     value: "adult",
+    //     icon: "iconsminds-heels-2"
+    // },
     {
         label: "Military Contract",
         value: "military_contract",

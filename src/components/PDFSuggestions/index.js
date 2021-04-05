@@ -9,26 +9,19 @@ const GlobalStyles = createGlobalStyle`
   }
 `
 
-const COMPANIES = {
-    'c4ca4238a0b923820dcc509a6f75849b': "Compass Planning Associates",
-    'c81e728d9d4c2f636f067f89cc14862c': "Modern Wealth Builders",
-    'b4736f8f1ed04d56df5c8937dc17018a': "WorthWhile Wealth Council",
-    'fe01ce2a7fbac8fafaed7c982a04e229': "Demo Company"
-}
-
 const ACTIVITIES = { 
-    "palm_oil":  "Palm Oil",
+    // "palm_oil":  "Palm Oil",
     "weapons": "Controversial Weapons",
-    "gambling": "Gambling",
+    // "gambling": "Gambling",
     "nuclear": "Nuclear",
-    "fur_leather": "Fur and Leather",
-    "alcohol": "Alcohol",
-    "gmo": "GMO", 
+    // "fur_leather": "Fur and Leather",
+    // "alcohol": "Alcohol",
+    // "gmo": "GMO", 
     "animal_testing": "Animal Testing",
     "tobacco": "Tobacco",
     "coal": "Coal",
-    "pesticides": "Pesticides",
-    "adult": "Adult Entertainment",
+    // "pesticides": "Pesticides",
+    // "adult": "Adult Entertainment",
     "military_contract": "Military Contract"
 }
 
@@ -309,13 +302,6 @@ const PDFSuggestions = (props) => (
             <Text style={styles.disclaimer}>Information in this document is subject to change. This document is generated on {new Date().toJSON().slice(0, 10).replace(/-/g, '/')} (Year/Month/Day).</Text>
             <View style={styles.section1}>
                 <View style={styles.s1_left}>
-                    <Text style={styles.title}>{
-                        COMPANIES[
-                        JSON
-                            .parse(localStorage.getItem('t__demo-user'))
-                            .auth_key
-                        ]
-                    }</Text>
                     <Text style={styles.normal_text}>Personalized investment idea</Text>
                     <Text style={styles.subtitle}>Key Client Preferences</Text>
                     <View style={styles.s1_left_part}>
