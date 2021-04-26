@@ -197,8 +197,8 @@ class index extends Component {
                                     strokeColor={getColorByScore(scoreBreakdown.risk_score)} />
                                 <h5>Risk Score</h5>
                                 <p>is calculated based on the client’s risk preference. We take into account
-                                    client’s risk, Morningstar risk rating, beta, Sharpe and Sortino ratios for the
-                                    past 3 years.</p>
+                                    client’s risk, beta, Sharpe and Sortino ratios for the
+                                    since the inception of ETF.</p>
                             </Col>
 
                             <Col
@@ -215,22 +215,17 @@ class index extends Component {
                                 {(riskMetrics) && <div>
                                     <div className="score-breakdown-detail__item">
                                         <p>Sharpe Ratio:&nbsp;
-                                            <strong>{riskMetrics.sharpe_ratio}</strong>
+                                            <strong>{riskMetrics.sharpe_ratio.toFixed(3)}</strong>
                                         </p>
                                     </div>
                                     <div className="score-breakdown-detail__item mt-10">
                                         <p>Sortino Ratio:&nbsp;
-                                            <strong>{riskMetrics.sortino_ratio}</strong>
+                                            <strong>{riskMetrics.sortino_ratio.toFixed(3)}</strong>
                                         </p>
                                     </div>
                                     <div className="score-breakdown-detail__item mt-10">
                                         <p>Beta:&nbsp;
-                                            <strong>{riskMetrics.beta}</strong>
-                                        </p>
-                                    </div>
-                                    <div className="score-breakdown-detail__item mt-10">
-                                        <p>Morningstar Risk Level:&nbsp;
-                                            <strong>{riskMetrics.morningstar_risk_level}</strong>
+                                            <strong>{riskMetrics.beta.toFixed(3)}</strong>
                                         </p>
                                     </div>
                                 </div>}

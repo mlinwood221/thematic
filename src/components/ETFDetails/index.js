@@ -7,18 +7,6 @@ const ETFDetails = (props) => {
         <div>
             <List>
                 <List.Item>
-                    <strong className="mr-10">Firm name</strong>
-                    <span>
-                        {props.data.parent.firm_name}
-                    </span>
-                </List.Item>
-                <List.Item>
-                    <strong className="mr-10">Market</strong>
-                    <span>
-                        {props.data.parent.market}
-                    </span>
-                </List.Item>
-                <List.Item>
                     <strong className="mr-10">Expense ratio</strong>
                     <span>
                         {(props.data.expense_ratio === -1) && 'n/a'}
@@ -34,39 +22,7 @@ const ETFDetails = (props) => {
                     </span>
                 </List.Item>
                 <List.Item>
-                    <strong className="mr-10">Total net assets</strong>
-                    <span>
-                        {(props.data.parent.total_net_assets === -1) && 'n/a'}
-                        {(props.data.parent.total_net_assets !== -1) && `USD${props.data.parent.total_net_assets}bil`}
-                    </span>
-                </List.Item>
-                <List.Item>
-                    <strong className="mr-10">Fund flows</strong>
-                    <span>
-                        {(props.data.parent.fund_flows === -1) && 'n/a'}
-                        {(props.data.parent.fund_flows !== -1) && `USD${props.data.parent.fund_flows}bil`}
-                    </span>
-                </List.Item>
-                <List.Item>
-                    <strong className="mr-10">Asset growth rate</strong>
-                    <span>
-                        {(props.data.parent.asset_growth_rate === -1) && 'n/a'}
-                        {(props.data.parent.asset_growth_rate !== -1) && `${props.data.parent.asset_growth_rate}%`}
-                    </span>
-                </List.Item>
-                <List.Item>
-                    <strong className="mr-10">Number of funds</strong>
-                    <span>
-                        {(props.data.parent.number_of_funds === -1) && 'n/a'}
-                        {(props.data.parent.number_of_funds !== -1) && props.data.parent.number_of_funds}                        
-                    </span>
-                </List.Item>
-                <List.Item>
-                    <strong className="mr-10">Manager Retention Rate</strong>
-                    <span>
-                        {(props.data.parent.manager_retention_rate === -1) && 'n/a'}
-                        {(props.data.parent.manager_retention_rate !== -1) && `${props.data.parent.manager_retention_rate}%`}
-                    </span>
+                    <a style={{cursor:"pointer"}} onClick={ () => {props.onOpenParent(props.data)}}><strong className="mr-10">View parent firm information</strong></a>
                 </List.Item>
             </List>
         </div>

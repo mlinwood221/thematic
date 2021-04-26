@@ -485,10 +485,6 @@ const PDFSuggestions = (props) => (
                             <Text style={styles.box_last_l}>Beta:</Text>
                             <Text style={styles.box_last_r}>{props.data.suggestions[0].risk_metrics.beta.toFixed(3)}</Text>
                         </View>{/* END BOX BOTTOM SINGLE */}
-                        <View style={styles.s2_box_bottom_single_last}>
-                            <Text style={styles.box_last_l}>Morningstar Risk Level:</Text>
-                            <Text style={styles.box_last_r}>{props.data.suggestions[0].risk_metrics.morningstar_risk_level}/5</Text>
-                        </View>{/* END BOX BOTTOM SINGLE */}
                     </View>{/* END BOX BOTTOM */}
                 </View>{/*END SECTION 2 SINGLE BOX */}
 
@@ -542,14 +538,6 @@ const PDFSuggestions = (props) => (
                         <View style={styles.s2_f_box_single}>
                             <Text style={styles.s2_f_box_single_l}>Dividend Yield: </Text>
                             <Text style={styles.s2_f_box_single_r}>{props.data.suggestions[0].dividend_yield <= -1 ? "N/A" : props.data.suggestions[0].dividend_yield.toFixed(3) + "%"} </Text>
-                        </View>{/* END SINGLE FOOTER BOX SECTION 2 */}
-                        <View style={styles.s2_f_box_single}>
-                            <Text style={styles.s2_f_box_single_l}>Parent Firm Name: </Text>
-                            <Text style={styles.s2_f_box_single_r}>{props.data.suggestions[0].parent.firm_name} </Text>
-                        </View>{/* END SINGLE FOOTER BOX SECTION 2 */}
-                        <View style={styles.s2_f_box_single}>
-                            <Text style={styles.s2_f_box_single_l}>Parent Firm Total Net Assets: </Text>
-                            <Text style={styles.s2_f_box_single_r}>{props.data.suggestions[0].parent.total_net_assets === -1 ? "N/A" : "$" + props.data.suggestions[0].parent.total_net_assets + " bil."} </Text>
                         </View>{/* END SINGLE FOOTER BOX SECTION 2 */}
                     </View>{/* END FOOTER BOX SECTION 2 */}
                 </View>{/*END SECTION 2 FOOTER */}
@@ -631,10 +619,6 @@ const PDFSuggestions = (props) => (
                                             <Text style={styles.box_last_l}>Beta:</Text>
                                             <Text style={styles.box_last_r}>{props.data.suggestions[k].risk_metrics.beta.toFixed(3)}</Text>
                                         </View>{/* END BOX BOTTOM SINGLE */}
-                                        <View style={styles.s2_box_bottom_single_last}>
-                                            <Text style={styles.box_last_l}>Morningstar Risk Level:</Text>
-                                            <Text style={styles.box_last_r}>{props.data.suggestions[k].risk_metrics.morningstar_risk_level}/5</Text>
-                                        </View>{/* END BOX BOTTOM SINGLE */}
                                     </View>{/* END BOX BOTTOM */}
                                 </View>{/*END SECTION 2 SINGLE BOX */}
 
@@ -688,14 +672,6 @@ const PDFSuggestions = (props) => (
                                         <View style={styles.s2_f_box_single}>
                                             <Text style={styles.s2_f_box_single_l}>Dividend Yield: </Text>
                                             <Text style={styles.s2_f_box_single_r}>{props.data.suggestions[k].dividend_yield <= -1 ? "N/A" : props.data.suggestions[k].dividend_yield.toFixed(3) + "%"} </Text>
-                                        </View>{/* END SINGLE FOOTER BOX SECTION 2 */}
-                                        <View style={styles.s2_f_box_single}>
-                                            <Text style={styles.s2_f_box_single_l}>Parent Firm Name: </Text>
-                                            <Text style={styles.s2_f_box_single_r}>{props.data.suggestions[k].parent.firm_name} </Text>
-                                        </View>{/* END SINGLE FOOTER BOX SECTION 2 */}
-                                        <View style={styles.s2_f_box_single}>
-                                            <Text style={styles.s2_f_box_single_l}>Parent Firm Total Net Assets: </Text>
-                                            <Text style={styles.s2_f_box_single_r}>{props.data.suggestions[k].parent.total_net_assets === -1 ? "N/A" : "$" + props.data.suggestions[k].parent.total_net_assets + " bil."} </Text>
                                         </View>{/* END SINGLE FOOTER BOX SECTION 2 */}
                                     </View>{/* END FOOTER BOX SECTION 2 */}
                                 </View>{/*END SECTION 2 FOOTER */}
@@ -769,10 +745,6 @@ const PDFSuggestions = (props) => (
                                                 <Text style={styles.box_last_l}>Beta:</Text>
                                                 <Text style={styles.box_last_r}>{props.data.suggestions[k + 1].risk_metrics.beta.toFixed(3)}</Text>
                                             </View>{/* END BOX BOTTOM SINGLE */}
-                                            <View style={styles.s2_box_bottom_single_last}>
-                                                <Text style={styles.box_last_l}>Morningstar Risk Level:</Text>
-                                                <Text style={styles.box_last_r}>{props.data.suggestions[k + 1].risk_metrics.morningstar_risk_level}/5</Text>
-                                            </View>{/* END BOX BOTTOM SINGLE */}
                                         </View>{/* END BOX BOTTOM */}
                                     </View>{/*END SECTION 2 SINGLE BOX */}
 
@@ -826,14 +798,6 @@ const PDFSuggestions = (props) => (
                                             <View style={styles.s2_f_box_single}>
                                                 <Text style={styles.s2_f_box_single_l}>Dividend Yield: </Text>
                                                 <Text style={styles.s2_f_box_single_r}>{props.data.suggestions[k + 1].dividend_yield <= -1 ? "N/A" : props.data.suggestions[k + 1].dividend_yield.toFixed(3) + "%"} </Text>
-                                            </View>{/* END SINGLE FOOTER BOX SECTION 2 */}
-                                            <View style={styles.s2_f_box_single}>
-                                                <Text style={styles.s2_f_box_single_l}>Parent Firm Name: </Text>
-                                                <Text style={styles.s2_f_box_single_r}>{props.data.suggestions[k + 1].parent.firm_name} </Text>
-                                            </View>{/* END SINGLE FOOTER BOX SECTION 2 */}
-                                            <View style={styles.s2_f_box_single}>
-                                                <Text style={styles.s2_f_box_single_l}>Parent Firm Total Net Assets: </Text>
-                                                <Text style={styles.s2_f_box_single_r}>{props.data.suggestions[k + 1].parent.total_net_assets === -1 ? "N/A" : "$" + props.data.suggestions[k + 1].parent.total_net_assets + " bil."} </Text>
                                             </View>{/* END SINGLE FOOTER BOX SECTION 2 */}
                                         </View>{/* END FOOTER BOX SECTION 2 */}
                                     </View>{/*END SECTION 2 FOOTER */}

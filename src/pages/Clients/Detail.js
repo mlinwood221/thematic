@@ -192,6 +192,28 @@ class Detail extends Component {
     return stats;
   };
 
+  handleOpenMorningstarParent = (currentSuggestion) => {
+    const morningstarSE = {
+      ARCA: "arcx",
+      NASDAQ: "xnas",
+      BATS: "bats",
+    };
+
+    console.log("PA DE VISE MAJKE TI", currentSuggestion);
+
+    const ticker = currentSuggestion.ticker.toLowerCase();
+    const stockExchange = currentSuggestion.stock_exchange;
+
+    window.open(
+      "https://www.morningstar.com/etfs/" +
+        morningstarSE[stockExchange] +
+        "/" +
+        ticker +
+        "/parent",
+      "_blank"
+    );
+  }
+
   handleOpenWithMorningstar = (currentSuggestion) => {
     const morningstarSE = {
       ARCA: "arcx",
@@ -1243,16 +1265,6 @@ class Detail extends Component {
                   Please Wait, Generating PDF
                 </Button>
               )}
-              <Button
-                appearance="link"
-                className="btn --outline mb-20"
-                style={{ width: "80%" }}
-                onClick={() =>
-                  this.handleOpenWithMorningstar(currentSuggestion)
-                }
-              >
-                Open with Morningstar
-              </Button>
               {/* <PDFDownload data={pdfData} /> */}
               {/* <Button
                             appearance="link"
@@ -1289,7 +1301,7 @@ class Detail extends Component {
               >{`${currentSuggestion.etf.name} Details`}</Modal.Title>
             </Modal.Header>
             <Modal.Body>
-              <ETFDetails data={currentSuggestion.etf} />
+              <ETFDetails onOpenParent={this.handleOpenMorningstarParent} data={currentSuggestion.etf} />
             </Modal.Body>
           </Modal>
         )}
