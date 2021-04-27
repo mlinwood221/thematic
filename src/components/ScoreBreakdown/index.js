@@ -129,9 +129,9 @@ class index extends Component {
                                 {(scoreBreakdown.restricted_activity_involvements) && scoreBreakdown.restricted_activity_involvements.map((i, k) => (
                                     <div key={k} className="score-breakdown-detail__item">
                                         <p>{getActivityNameByID(i.negative_activity)}</p>
-                                        {parseInt(i.involvement)<0.5 && <p className="no-more-info">Very little or no involvement</p>}
-                                        {parseInt(i.involvement)>=0.5 && parseInt(i.involvement)<1 && <p style={{color:"orange"}} className="no-more-info">Some companies in this ETF are involved</p>}
-                                        {parseInt(i.involvement)>=1 && <p style={{color:"red"}} className="no-more-info">Involved</p>}
+                                        {parseInt(i.involvement)<=0 && <p className="no-more-info">No involvement</p>}
+                                        {parseInt(i.involvement)>0 && parseInt(i.involvement)<1 && <p style={{color:"orange"}} className="no-more-info">Few companies reported significant involvement in this activity</p>}
+                                        {parseInt(i.involvement)>=1 && <p style={{color:"red"}} className="no-more-info">There are companies that reported significant involvement in this activity</p>}
                                         {/* {parseInt(i.involvement)>=0.5 && <Progress.Line
                                             percent={parseInt(i.involvement)}
                                             strokeColor={getColorByScore(i.involvement)} />} */}
