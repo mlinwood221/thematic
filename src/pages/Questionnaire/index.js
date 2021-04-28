@@ -36,13 +36,13 @@ class Questionnaire extends Component {
 
     getQuestionnaireBaseUrl = () => {
         if(process.env.REACT_APP_ENVIRONMENT ==='development'){
-            return "http://dev.usethematic.com"
+            return "http://dev.thematic.com"
         }
         if(process.env.REACT_APP_ENVIRONMENT ==='local'){
             return "http://localhost:3000"
         }
         if(process.env.REACT_APP_ENVIRONMENT==='production'){
-            return "https://app.usethematic.com"
+            return "https://app.thematic.com"
         }
     }
 
